@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RaidsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RaidMemebers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="RaidId" Type="int" />
+        </EntityType>
+        <EntityType Name="Raids">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaidName" Type="varchar" MaxLength="50" />
+          <Property Name="DateTime" Type="datetime2" Precision="7" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="NumberNeeded" Type="int" />
+          <Property Name="NumberSignedUp" Type="int" />
+        </EntityType>
+        <Association Name="FK_RaidMemebers_ToTable">
+          <End Role="Raids" Type="Self.Raids" Multiplicity="0..1" />
+          <End Role="RaidMemebers" Type="Self.RaidMemebers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raids">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaidMemebers">
+              <PropertyRef Name="RaidId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RaidsModelStoreContainer">
+          <EntitySet Name="RaidMemebers" EntityType="Self.RaidMemebers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raids" EntityType="Self.Raids" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_RaidMemebers_ToTable" Association="Self.FK_RaidMemebers_ToTable">
+            <End Role="Raids" EntitySet="Raids" />
+            <End Role="RaidMemebers" EntitySet="RaidMemebers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RaidsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RaidMemeber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RaidId" Type="Int32" />
+          <NavigationProperty Name="Raid" Relationship="Self.FK_RaidMemebers_ToTable" FromRole="RaidMemebers" ToRole="Raids" />
+        </EntityType>
+        <EntityType Name="Raid">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaidName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateTime" Type="DateTime" Precision="7" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NumberNeeded" Type="Int32" />
+          <Property Name="NumberSignedUp" Type="Int32" />
+          <NavigationProperty Name="RaidMemebers" Relationship="Self.FK_RaidMemebers_ToTable" FromRole="Raids" ToRole="RaidMemebers" />
+        </EntityType>
+        <Association Name="FK_RaidMemebers_ToTable">
+          <End Role="Raids" Type="Self.Raid" Multiplicity="0..1" />
+          <End Role="RaidMemebers" Type="Self.RaidMemeber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Raids">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RaidMemebers">
+              <PropertyRef Name="RaidId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RaidsConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RaidMemebers" EntityType="Self.RaidMemeber" />
+          <EntitySet Name="Raids" EntityType="Self.Raid" />
+          <AssociationSet Name="FK_RaidMemebers_ToTable" Association="Self.FK_RaidMemebers_ToTable">
+            <End Role="Raids" EntitySet="Raids" />
+            <End Role="RaidMemebers" EntitySet="RaidMemebers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RaidsModelStoreContainer" CdmEntityContainer="RaidsConnection">
+          <EntitySetMapping Name="RaidMemebers">
+            <EntityTypeMapping TypeName="RaidsModel.RaidMemeber">
+              <MappingFragment StoreEntitySet="RaidMemebers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="RaidId" ColumnName="RaidId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Raids">
+            <EntityTypeMapping TypeName="RaidsModel.Raid">
+              <MappingFragment StoreEntitySet="Raids">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RaidName" ColumnName="RaidName" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NumberNeeded" ColumnName="NumberNeeded" />
+                <ScalarProperty Name="NumberSignedUp" ColumnName="NumberSignedUp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

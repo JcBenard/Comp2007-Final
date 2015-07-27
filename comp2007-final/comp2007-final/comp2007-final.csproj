@@ -38,11 +38,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -76,6 +81,8 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -94,7 +101,51 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="Default.Master" />
+    <EntityDeploy Include="Models\RaidsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RaidsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Children_Insert.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime.ascx" />
+    <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey.ascx" />
+    <Content Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Integer_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
+    <Content Include="Models\RaidsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RaidsModel.edmx</DependentUpon>
+      <LastGenOutput>RaidsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RaidsModel.edmx.diagram">
+      <DependentUpon>RaidsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RaidsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RaidsModel.edmx</DependentUpon>
+      <LastGenOutput>RaidsModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\comp2007-final.pubxml" />
+    <Content Include="RaidMemebers\Default.aspx" />
+    <Content Include="RaidMemebers\Delete.aspx" />
+    <Content Include="RaidMemebers\Details.aspx" />
+    <Content Include="RaidMemebers\Edit.aspx" />
+    <Content Include="RaidMemebers\Insert.aspx" />
+    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -119,22 +170,169 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Raids\Default.aspx" />
+    <Content Include="Raids\Delete.aspx" />
+    <Content Include="Raids\Details.aspx" />
+    <Content Include="Raids\Edit.aspx" />
+    <Content Include="Raids\Insert.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean.ascx.designer.cs">
+      <DependentUpon>Boolean.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Boolean_Edit.ascx.designer.cs">
+      <DependentUpon>Boolean_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children.ascx.designer.cs">
+      <DependentUpon>Children.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Children_Insert.ascx.designer.cs">
+      <DependentUpon>Children_Insert.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime.ascx.designer.cs">
+      <DependentUpon>DateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\DateTime_Edit.ascx.designer.cs">
+      <DependentUpon>DateTime_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.designer.cs">
+      <DependentUpon>Decimal_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\EmailAddress.ascx.designer.cs">
+      <DependentUpon>EmailAddress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration.ascx.designer.cs">
+      <DependentUpon>Enumeration.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Enumeration_Edit.ascx.designer.cs">
+      <DependentUpon>Enumeration_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey.ascx.designer.cs">
+      <DependentUpon>ForeignKey.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\ForeignKey_Edit.ascx.designer.cs">
+      <DependentUpon>ForeignKey_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Integer_Edit.ascx.designer.cs">
+      <DependentUpon>Integer_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\MultilineText_Edit.ascx.designer.cs">
+      <DependentUpon>MultilineText_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text.ascx.designer.cs">
+      <DependentUpon>Text.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Text_Edit.ascx.designer.cs">
+      <DependentUpon>Text_Edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url.ascx.designer.cs">
+      <DependentUpon>Url.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Url_Edit.ascx.designer.cs">
+      <DependentUpon>Url_Edit.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -153,7 +351,98 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Raid.cs">
+      <DependentUpon>RaidsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RaidMemeber.cs">
+      <DependentUpon>RaidsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RaidsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaidsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RaidsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaidsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RaidsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RaidsModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaidMemebers\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaidMemebers\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaidMemebers\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaidMemebers\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaidMemebers\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raids\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raids\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raids\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raids\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raids\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raids\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raids\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raids\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raids\Insert.aspx.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raids\Insert.aspx.designer.cs">
+      <DependentUpon>Insert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,11 +450,27 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
