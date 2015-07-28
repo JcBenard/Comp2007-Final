@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" CodeBehind="Boolean_Edit.ascx.cs" Inherits="comp2007_final.Boolean_EditField" %>
+﻿<%@ Control Language="C#" CodeBehind="Boolean_Edit.ascx.cs" Inherits="Comp2007_final.Boolean_EditField" %>
 
 <div id="Div1" runat="server" class="form-group">
     <div class="col-sm-offset-2 col-sm-3">

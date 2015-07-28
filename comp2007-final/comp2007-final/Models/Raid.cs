@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final.Models
+namespace Comp2007_final.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Raid
     {
@@ -22,10 +21,14 @@ namespace comp2007_final.Models
     
         public int Id { get; set; }
         public string RaidName { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
+        public string Time { get; set; }
         public string Description { get; set; }
-        public Nullable<int> NumberNeeded { get; set; }
-        public Nullable<int> NumberSignedUp { get; set; }
+        public Nullable<int> TanksNeeded { get; set; }
+        public Nullable<int> HealersNeeded { get; set; }
+        public Nullable<int> DpsNeeded { get; set; }
+        public int TanksHave { get; set; }
+        public int HealersHave { get; set; }
+        public int DpsHave { get; set; }
     
         public virtual ICollection<RaidMemeber> RaidMemebers { get; set; }
     }

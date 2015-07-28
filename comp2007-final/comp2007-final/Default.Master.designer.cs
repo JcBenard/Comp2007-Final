@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final
-{
-
-
-    public partial class Default
-    {
-
+namespace Comp2007_final {
+    
+    
+    public partial class Default {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// PublicNav control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PublicNav;
-
+        
         /// <summary>
         /// PrivateNav control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PrivateNav;
-
+        
         /// <summary>
         /// LoginName1 control.
         /// </summary>
@@ -58,7 +56,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginName LoginName1;
-
+        
         /// <summary>
         /// logout control.
         /// </summary>
@@ -67,7 +65,7 @@ namespace comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton logout;
-
+        
         /// <summary>
         /// MainContent control.
         /// </summary>

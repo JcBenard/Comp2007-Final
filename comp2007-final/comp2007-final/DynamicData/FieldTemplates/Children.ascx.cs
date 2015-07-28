@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class ChildrenField : System.Web.DynamicData.FieldTemplateUserControl {
         private bool _allowNavigation = true;
         private string _navigateUrl;

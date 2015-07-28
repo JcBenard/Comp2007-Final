@@ -6,7 +6,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace comp2007_final
+namespace Comp2007_final
 {
     public class Global : System.Web.HttpApplication
     {

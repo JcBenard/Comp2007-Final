@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class Decimal_EditField {
 		protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
         protected global::System.Web.UI.WebControls.Label Label1;

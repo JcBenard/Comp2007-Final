@@ -1,4 +1,4 @@
-﻿<%@ Page Title="RaidList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="comp2007_final.Raids.Default" %>
+﻿<%@ Page Title="RaidList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="Comp2007_final.Raids.Default" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <h2>Raids List</h2>
@@ -8,32 +8,41 @@
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="Id" 
-			ItemType="comp2007_final.Models.Raid"
+			ItemType="Comp2007_final.Models.Raid"
             SelectMethod="GetData">
             <EmptyDataTemplate>
                 There are no entries found for Raids
             </EmptyDataTemplate>
             <LayoutTemplate>
-                <table class="table">
+                <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>
-								<asp:LinkButton Text="Id" CommandName="Sort" CommandArgument="Id" runat="Server" />
-							</th>
                             <th>
 								<asp:LinkButton Text="RaidName" CommandName="Sort" CommandArgument="RaidName" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="DateTime" CommandName="Sort" CommandArgument="DateTime" runat="Server" />
+								<asp:LinkButton Text="Time" CommandName="Sort" CommandArgument="Time" runat="Server" />
 							</th>
                             <th>
 								<asp:LinkButton Text="Description" CommandName="Sort" CommandArgument="Description" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="NumberNeeded" CommandName="Sort" CommandArgument="NumberNeeded" runat="Server" />
+								<asp:LinkButton Text="TanksNeeded" CommandName="Sort" CommandArgument="TanksNeeded" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="NumberSignedUp" CommandName="Sort" CommandArgument="NumberSignedUp" runat="Server" />
+								<asp:LinkButton Text="HealersNeeded" CommandName="Sort" CommandArgument="HealersNeeded" runat="Server" />
+							</th>
+                            <th>
+								<asp:LinkButton Text="DpsNeeded" CommandName="Sort" CommandArgument="DpsNeeded" runat="Server" />
+							</th>
+                            <th>
+								<asp:LinkButton Text="TanksHave" CommandName="Sort" CommandArgument="TanksHave" runat="Server" />
+							</th>
+                            <th>
+								<asp:LinkButton Text="HealersHave" CommandName="Sort" CommandArgument="HealersHave" runat="Server" />
+							</th>
+                            <th>
+								<asp:LinkButton Text="DpsHave" CommandName="Sort" CommandArgument="DpsHave" runat="Server" />
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -44,37 +53,46 @@
                 </table>
 				<asp:DataPager PageSize="5"  runat="server">
 					<Fields>
-                        <asp:NextPreviousPagerField ShowLastPageButton="False" ShowNextPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
-                        <asp:NumericPagerField ButtonType="Button"  NumericButtonCssClass="btn" CurrentPageLabelCssClass="btn disabled" NextPreviousButtonCssClass="btn" />
-                        <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
+                        <asp:NextPreviousPagerField ShowLastPageButton="False" ShowNextPageButton="False" ButtonType="Button" ButtonCssClass="btn btn-default" />
+                        <asp:NumericPagerField ButtonType="Button"  NumericButtonCssClass="btn" CurrentPageLabelCssClass="btn btn-default disabled" NextPreviousButtonCssClass="btn btn-default" />
+                        <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn btn-default" />
                     </Fields>
 				</asp:DataPager>
             </LayoutTemplate>
             <ItemTemplate>
                 <tr>
 							<td>
-								<asp:DynamicControl runat="server" DataField="Id" ID="Id" Mode="ReadOnly" />
-							</td>
-							<td>
 								<asp:DynamicControl runat="server" DataField="RaidName" ID="RaidName" Mode="ReadOnly" />
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="DateTime" ID="DateTime" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="Time" ID="Time" Mode="ReadOnly" />
 							</td>
 							<td>
 								<asp:DynamicControl runat="server" DataField="Description" ID="Description" Mode="ReadOnly" />
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="NumberNeeded" ID="NumberNeeded" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="TanksNeeded" ID="TanksNeeded" Mode="ReadOnly" />
 							</td>
 							<td>
-								<asp:DynamicControl runat="server" DataField="NumberSignedUp" ID="NumberSignedUp" Mode="ReadOnly" />
+								<asp:DynamicControl runat="server" DataField="HealersNeeded" ID="HealersNeeded" Mode="ReadOnly" />
 							</td>
-                    <td>
-					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Details", Item.Id) %>' Text="Details" /> | 
+							<td>
+								<asp:DynamicControl runat="server" DataField="DpsNeeded" ID="DpsNeeded" Mode="ReadOnly" />
+							</td>
+							<td>
+								<asp:DynamicControl runat="server" DataField="TanksHave" ID="TanksHave" Mode="ReadOnly" />
+							</td>
+							<td>
+								<asp:DynamicControl runat="server" DataField="HealersHave" ID="HealersHave" Mode="ReadOnly" />
+							</td>
+							<td>
+								<asp:DynamicControl runat="server" DataField="DpsHave" ID="DpsHave" Mode="ReadOnly" />
+							</td>
+                    <td>					    
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Edit", Item.Id) %>' Text="Edit" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Delete", Item.Id) %>' Text="Delete" />
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Inset", Item.Id) %>' Text="Join" />
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Delete", Item.Id) %>' Text="Delete" /> |
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Default", Item.Id) %>' Text="Memebers" /> | 
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Insert", Item.Id) %>' Text="Join" /> | 
                     </td>
                 </tr>
             </ItemTemplate>

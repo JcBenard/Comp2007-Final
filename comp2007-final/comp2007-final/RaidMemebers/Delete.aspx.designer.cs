@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final.RaidMemebers {
+namespace Comp2007_final.RaidMemebers {
     public partial class Delete {
         /// <summary>
         /// form1 control.

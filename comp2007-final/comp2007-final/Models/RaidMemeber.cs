@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final.Models
+namespace Comp2007_final.Models
 {
     using System;
     using System.Collections.Generic;

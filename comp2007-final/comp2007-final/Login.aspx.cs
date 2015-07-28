@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace comp2007_final
+namespace Comp2007_final
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -41,7 +41,7 @@ namespace comp2007_final
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                Response.Redirect("~/Stuff/Index.aspx");
+                Response.Redirect("~/Raids/Default.aspx");
             }
             else
             {

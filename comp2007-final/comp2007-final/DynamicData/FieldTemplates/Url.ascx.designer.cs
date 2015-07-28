@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class UrlField {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkUrl;
     }

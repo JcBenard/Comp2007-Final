@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final
+namespace Comp2007_final
 {
 
 

@@ -7,13 +7,13 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
-using comp2007_final.Models;
+using Comp2007_final.Models;
 
-namespace comp2007_final.Raids
+namespace Comp2007_final.Raids
 {
     public partial class Delete : System.Web.UI.Page
     {
-		protected comp2007_final.Models.RaidsConnection _db = new comp2007_final.Models.RaidsConnection();
+		protected Comp2007_final.Models.RaidsEntities _db = new Comp2007_final.Models.RaidsEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace comp2007_final.Raids
 
         // This is the Select methd to selects a single Raid item with the id
         // USAGE: <asp:FormView SelectMethod="GetItem">
-        public comp2007_final.Models.Raid GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
+        public Comp2007_final.Models.Raid GetItem([FriendlyUrlSegmentsAttribute(0)]int? Id)
         {
             if (Id == null)
             {

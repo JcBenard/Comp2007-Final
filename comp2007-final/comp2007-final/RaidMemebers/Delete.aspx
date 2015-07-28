@@ -1,10 +1,10 @@
-﻿<%@ Page Title="RaidMemeberDelete" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Delete.aspx.cs" Inherits="comp2007_final.RaidMemebers.Delete" %>
+﻿<%@ Page Title="RaidMemeberDelete" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Delete.aspx.cs" Inherits="Comp2007_final.RaidMemebers.Delete" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
         <h3>Are you sure want to delete this RaidMemeber?</h3>
         <asp:FormView runat="server"
-            ItemType="comp2007_final.Models.RaidMemeber" DataKeyNames="Id"
+            ItemType="Comp2007_final.Models.RaidMemeber" DataKeyNames="Id"
             DeleteMethod="DeleteItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>

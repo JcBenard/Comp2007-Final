@@ -1,9 +1,9 @@
-﻿<%@ Page Title="RaidMemeberEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="comp2007_final.RaidMemebers.Edit" %>
+﻿<%@ Page Title="RaidMemeberEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="Comp2007_final.RaidMemebers.Edit" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
-            ItemType="comp2007_final.Models.RaidMemeber" DefaultMode="Edit" DataKeyNames="Id"
+            ItemType="Comp2007_final.Models.RaidMemeber" DefaultMode="Edit" DataKeyNames="Id"
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
@@ -17,7 +17,7 @@
 						    <asp:DynamicControl Mode="Edit" DataField="Role" runat="server" />
 							<asp:DynamicControl Mode="Edit" 
 								DataField="RaidId" 
-								DataTypeName="comp2007_final.Models.Raid" 
+								DataTypeName="Comp2007_final.Models.Raid" 
 								DataTextField="RaidName" 
 								DataValueField="Id" 
 								UIHint="ForeignKey" runat="server" />

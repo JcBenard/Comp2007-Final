@@ -1,4 +1,4 @@
-﻿<%@ Page Title="RaidMemeberList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="comp2007_final.RaidMemebers.Default" %>
+﻿<%@ Page Title="RaidMemeberList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="Comp2007_final.RaidMemebers.Default" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <h2>RaidMemebers List</h2>
@@ -8,7 +8,7 @@
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="Id" 
-			ItemType="comp2007_final.Models.RaidMemeber"
+			ItemType="Comp2007_final.Models.RaidMemeber"
             SelectMethod="GetData">
             <EmptyDataTemplate>
                 There are no entries found for RaidMemebers
@@ -17,9 +17,6 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>
-								<asp:LinkButton Text="Id" CommandName="Sort" CommandArgument="Id" runat="Server" />
-							</th>
                             <th>
 								<asp:LinkButton Text="Name" CommandName="Sort" CommandArgument="Name" runat="Server" />
 							</th>
@@ -47,9 +44,6 @@
             <ItemTemplate>
                 <tr>
 							<td>
-								<asp:DynamicControl runat="server" DataField="Id" ID="Id" Mode="ReadOnly" />
-							</td>
-							<td>
 								<asp:DynamicControl runat="server" DataField="Name" ID="Name" Mode="ReadOnly" />
 							</td>
 							<td>
@@ -59,10 +53,8 @@
 								<%#: Item.Raid != null ? Item.Raid.RaidName : "" %>
 							</td>
                     <td>
-					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Details", Item.Id) %>' Text="Details" /> | 
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Edit", Item.Id) %>' Text="Edit" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id) %>' Text="Delete" />
-
                     </td>
                 </tr>
             </ItemTemplate>

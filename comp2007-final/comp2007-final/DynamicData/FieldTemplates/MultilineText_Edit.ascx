@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" CodeBehind="MultilineText_Edit.ascx.cs" Inherits="comp2007_final.MultilineText_EditField" %>
+﻿<%@ Control Language="C#" CodeBehind="MultilineText_Edit.ascx.cs" Inherits="Comp2007_final.MultilineText_EditField" %>
 
 <div id="Div1" runat="server" class="form-group">
     <asp:Label ID="Label1" runat="server" CssClass="col-sm-2 control-label" />

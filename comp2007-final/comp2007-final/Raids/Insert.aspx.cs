@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
-using comp2007_final.Models;
+using Comp2007_final.Models;
 
-namespace comp2007_final.Raids
+namespace Comp2007_final.Raids
 {
     public partial class Insert : System.Web.UI.Page
     {
-		protected comp2007_final.Models.RaidsConnection _db = new comp2007_final.Models.RaidsConnection();
+		protected Comp2007_final.Models.RaidsEntities _db = new Comp2007_final.Models.RaidsEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace comp2007_final.Raids
         {
             using (_db)
             {
-                var item = new comp2007_final.Models.Raid();
+                var item = new Comp2007_final.Models.Raid();
 
                 TryUpdateModel(item);
 

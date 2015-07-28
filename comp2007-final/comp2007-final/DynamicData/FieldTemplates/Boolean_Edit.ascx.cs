@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class Boolean_EditField : System.Web.DynamicData.FieldTemplateUserControl {
 
 		protected void Page_Init(object sender, EventArgs e)

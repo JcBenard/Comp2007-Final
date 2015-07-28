@@ -5,9 +5,9 @@ using Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.AspNet.Identity;
 
-[assembly: OwinStartup(typeof(comp2007_final.Startup))]
+[assembly: OwinStartup(typeof(Comp2007_final.Startup))]
 
-namespace comp2007_final
+namespace Comp2007_final
 {
     public class Startup
     {

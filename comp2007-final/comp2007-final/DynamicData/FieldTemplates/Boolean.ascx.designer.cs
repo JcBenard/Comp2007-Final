@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class BooleanField {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
     }

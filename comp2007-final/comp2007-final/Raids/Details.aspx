@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Raid Details" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Details.aspx.cs" Inherits="comp2007_final.Raids.Details" %>
+﻿<%@ Page Title="Raid Details" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Details.aspx.cs" Inherits="Comp2007_final.Raids.Details" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
       
         <asp:FormView runat="server"
-            ItemType="comp2007_final.Models.Raid" DataKeyNames="Id"
+            ItemType="Comp2007_final.Models.Raid" DataKeyNames="Id"
             SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
@@ -31,10 +31,10 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>DateTime</strong>
+									<strong>Time</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="DateTime" ID="DateTime" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="Time" ID="Time" Mode="ReadOnly" />
 								</div>
 							</div>
 							<div class="row">
@@ -47,18 +47,50 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>NumberNeeded</strong>
+									<strong>TanksNeeded</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="NumberNeeded" ID="NumberNeeded" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="TanksNeeded" ID="TanksNeeded" Mode="ReadOnly" />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>NumberSignedUp</strong>
+									<strong>HealersNeeded</strong>
 								</div>
 								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="NumberSignedUp" ID="NumberSignedUp" Mode="ReadOnly" />
+									<asp:DynamicControl runat="server" DataField="HealersNeeded" ID="HealersNeeded" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>DpsNeeded</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="DpsNeeded" ID="DpsNeeded" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>TanksHave</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="TanksHave" ID="TanksHave" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>HealersHave</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="HealersHave" ID="HealersHave" Mode="ReadOnly" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2 text-right">
+									<strong>DpsHave</strong>
+								</div>
+								<div class="col-sm-4">
+									<asp:DynamicControl runat="server" DataField="DpsHave" ID="DpsHave" Mode="ReadOnly" />
 								</div>
 							</div>
                  	<div class="row">

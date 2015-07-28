@@ -6,12 +6,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Linq;
-using comp2007_final.Models;
+using Comp2007_final.Models;
 
-namespace comp2007_final {
+namespace Comp2007_final {
     public partial class ForeignKey_EditField : System.Web.DynamicData.FieldTemplateUserControl {
 
-		protected comp2007_final.Models.RaidsConnection _db = new comp2007_final.Models.RaidsConnection();
+		protected Comp2007_final.Models.RaidsEntities _db = new Comp2007_final.Models.RaidsEntities();
 
 		public string DataTypeName { get; set; }
 

@@ -1,9 +1,9 @@
-﻿<%@ Page Title="RaidInsert" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Insert.aspx.cs" Inherits="comp2007_final.Raids.Insert" %>
+﻿<%@ Page Title="RaidInsert" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Insert.aspx.cs" Inherits="Comp2007_final.Raids.Insert" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div>
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
-            ItemType="comp2007_final.Models.Raid" DefaultMode="Insert"
+            ItemType="Comp2007_final.Models.Raid" DefaultMode="Insert"
             InsertItemPosition="FirstItem" InsertMethod="InsertItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <InsertItemTemplate>
@@ -11,10 +11,11 @@
 				<legend>Insert Raid</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
 						    <asp:DynamicControl Mode="Insert" DataField="RaidName" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="DateTime" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Time" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="NumberNeeded" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="NumberSignedUp" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="TanksNeeded" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="HealersNeeded" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="DpsNeeded" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace comp2007_final.Raids {
+namespace Comp2007_final.Raids {
     
     
     public partial class Default {

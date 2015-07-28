@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>comp2007_final</RootNamespace>
-    <AssemblyName>comp2007-final</AssemblyName>
+    <RootNamespace>Comp2007_final</RootNamespace>
+    <AssemblyName>Comp2007-final</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -38,12 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
@@ -101,13 +99,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Content\background.css" />
+    <Content Include="Content\BootWatch.css" />
+    <Content Include="Content\images\ffxiv_07272015_224438.png" />
     <Content Include="Default.Master" />
-    <EntityDeploy Include="Models\RaidsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RaidsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
@@ -126,26 +121,36 @@
     <Content Include="DynamicData\FieldTemplates\Text_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url.ascx" />
     <Content Include="DynamicData\FieldTemplates\Url_Edit.ascx" />
-    <Content Include="Models\RaidsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RaidsModel.edmx</DependentUpon>
-      <LastGenOutput>RaidsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\RaidsModel.edmx.diagram">
-      <DependentUpon>RaidsModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\RaidsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RaidsModel.edmx</DependentUpon>
-      <LastGenOutput>RaidsModel.cs</LastGenOutput>
-    </Content>
-    <None Include="Properties\PublishProfiles\comp2007-final.pubxml" />
+    <Content Include="RaidMemebers\Mine.aspx" />
     <Content Include="RaidMemebers\Default.aspx" />
     <Content Include="RaidMemebers\Delete.aspx" />
     <Content Include="RaidMemebers\Details.aspx" />
     <Content Include="RaidMemebers\Edit.aspx" />
     <Content Include="RaidMemebers\Insert.aspx" />
+    <Content Include="Raids\Default.aspx" />
+    <Content Include="Raids\Delete.aspx" />
+    <Content Include="Raids\Details.aspx" />
+    <Content Include="Raids\Edit.aspx" />
+    <Content Include="Raids\Insert.aspx" />
     <Content Include="Site.Mobile.Master" />
+    <EntityDeploy Include="Models\Raid.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Raid.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Raid.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Raid.edmx</DependentUpon>
+      <LastGenOutput>Raid.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Raid.edmx.diagram">
+      <DependentUpon>Raid.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Raid.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Raid.edmx</DependentUpon>
+      <LastGenOutput>Raid1.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\comp2007-final.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,11 +175,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Raids\Default.aspx" />
-    <Content Include="Raids\Delete.aspx" />
-    <Content Include="Raids\Details.aspx" />
-    <Content Include="Raids\Edit.aspx" />
-    <Content Include="Raids\Insert.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -186,21 +186,7 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -351,28 +337,35 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Raid.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Raid.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Raid.cs">
-      <DependentUpon>RaidsModel.tt</DependentUpon>
+      <DependentUpon>Raid.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Raid.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Raid.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Raid1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Raid.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RaidMemeber.cs">
-      <DependentUpon>RaidsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RaidsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RaidsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RaidsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RaidsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RaidsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RaidsModel.edmx</DependentUpon>
+      <DependentUpon>Raid.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaidMemebers\Mine.aspx.cs">
+      <DependentUpon>Mine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaidMemebers\Mine.aspx.designer.cs">
+      <DependentUpon>Mine.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RaidMemebers\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
