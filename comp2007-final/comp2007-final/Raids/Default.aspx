@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="RaidList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="Comp2007_final.Raids.Default" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
+    <div class="well">
     <h2>Raids List</h2>
     <p>
         <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new" />
@@ -18,7 +19,7 @@
                     <thead>
                         <tr>
                             <th>
-								<asp:LinkButton Text="RaidName" CommandName="Sort" CommandArgument="RaidName" runat="Server" />
+								<asp:LinkButton Text="Event Name" CommandName="Sort" CommandArgument="RaidName" runat="Server" />
 							</th>
                             <th>
 								<asp:LinkButton Text="Time" CommandName="Sort" CommandArgument="Time" runat="Server" />
@@ -27,22 +28,22 @@
 								<asp:LinkButton Text="Description" CommandName="Sort" CommandArgument="Description" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="TanksNeeded" CommandName="Sort" CommandArgument="TanksNeeded" runat="Server" />
+								<asp:LinkButton Text="Tanks Needed" CommandName="Sort" CommandArgument="TanksNeeded" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="HealersNeeded" CommandName="Sort" CommandArgument="HealersNeeded" runat="Server" />
+								<asp:LinkButton Text="Healers Needed" CommandName="Sort" CommandArgument="HealersNeeded" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="DpsNeeded" CommandName="Sort" CommandArgument="DpsNeeded" runat="Server" />
+								<asp:LinkButton Text="Dps Needed" CommandName="Sort" CommandArgument="DpsNeeded" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="TanksHave" CommandName="Sort" CommandArgument="TanksHave" runat="Server" />
+								<asp:LinkButton Text="Tanks Have" CommandName="Sort" CommandArgument="TanksHave" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="HealersHave" CommandName="Sort" CommandArgument="HealersHave" runat="Server" />
+								<asp:LinkButton Text="Healers Have" CommandName="Sort" CommandArgument="HealersHave" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="DpsHave" CommandName="Sort" CommandArgument="DpsHave" runat="Server" />
+								<asp:LinkButton Text="Dps Have" CommandName="Sort" CommandArgument="DpsHave" runat="Server" />
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -92,11 +93,12 @@
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Edit", Item.Id) %>' Text="Edit" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Delete", Item.Id) %>' Text="Delete" /> |
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Default", Item.Id) %>' Text="Memebers" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Insert", Item.Id) %>' Text="Join" /> | 
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Insert", Item.Id) %>' Text="Join" /> 
                     </td>
                 </tr>
             </ItemTemplate>
         </asp:ListView>
     </div>
+        </div>
 </asp:Content>
 

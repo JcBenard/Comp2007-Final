@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Comp2007_final
-{
-
-
-    public partial class Register
-    {
-
+namespace Comp2007_final {
+    
+    
+    public partial class Register {
+        
         /// <summary>
         /// StatusMessage control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal StatusMessage;
-
+        
         /// <summary>
         /// UserName control.
         /// </summary>
@@ -31,16 +29,7 @@ namespace Comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox UserName;
-
-        /// <summary>
-        /// UserEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UserEmail;
-
+        
         /// <summary>
         /// Password control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace Comp2007_final
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
-
+        
         /// <summary>
         /// ConfirmPassword control.
         /// </summary>

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Comp2007_final.Models;
+using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 
 namespace Comp2007_final.RaidMemebers
 {
@@ -19,9 +20,11 @@ namespace Comp2007_final.RaidMemebers
 
         // Model binding method to get List of RaidMemeber entries
         // USAGE: <asp:ListView SelectMethod="GetData">
-        public IQueryable<Comp2007_final.Models.RaidMemeber> GetData()
+        public IQueryable<Comp2007_final.Models.RaidMemeber> GetData([FriendlyUrlSegmentsAttribute(0)]int? Id)
         {
-            return _db.RaidMemebers.Include(m => m.Raid);
+            var query = _db.RaidMemebers.Include(m => m.Raid)
+                .Where(m => m.RaidId == Id);
+            return query;
         }
     }
 }

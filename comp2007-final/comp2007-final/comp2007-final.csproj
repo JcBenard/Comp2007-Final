@@ -99,6 +99,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="Content\background.css" />
     <Content Include="Content\BootWatch.css" />
     <Content Include="Content\images\ffxiv_07272015_224438.png" />
@@ -186,7 +188,21 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.Master.cs">
       <DependentUpon>Default.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

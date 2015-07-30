@@ -22,7 +22,7 @@ namespace Comp2007_final
             // Default UserStore constructor uses the default connection string named: DefaultConnection
             var userStore = new UserStore<IdentityUser>();
             var manager = new UserManager<IdentityUser>(userStore);
-            var user = new IdentityUser() { UserName = UserName.Text, Email = UserEmail.Text };
+            var user = new IdentityUser() { UserName = UserName.Text};
 
             IdentityResult result = manager.Create(user, Password.Text);
 
@@ -31,7 +31,7 @@ namespace Comp2007_final
                 var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = manager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                 authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Raids/Default.aspx");
             }
             else
             {
