@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Comp2007_final.Models;
+using Microsoft.AspNet.FriendlyUrls;
 
 namespace Comp2007_final.RaidMemebers
 {
@@ -23,9 +24,13 @@ namespace Comp2007_final.RaidMemebers
         // USAGE: <asp:FormView DeleteMethod="DeleteItem">
         public void DeleteItem(int Id)
         {
+            int raids;
+
             using (_db)
             {
                 var item = _db.RaidMemebers.Find(Id);
+
+                raids = int.Parse(item.RaidId.ToString());
 
                 if (item != null)
                 {
@@ -33,7 +38,7 @@ namespace Comp2007_final.RaidMemebers
                     _db.SaveChanges();
                 }
             }
-            Response.Redirect("../Default");
+            Response.Redirect(FriendlyUrl.Href("~/RaidMemebers/Default", raids));
         }
 
         // This is the Select methd to selects a single RaidMemeber item with the id

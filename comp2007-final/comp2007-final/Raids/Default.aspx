@@ -4,7 +4,7 @@
     <div class="well">
     <h2>Raids List</h2>
     <p>
-        <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new" />
+        <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new raid" />
     </p>
     <div>
         <asp:ListView id="ListView1" runat="server"
@@ -91,7 +91,6 @@
 							</td>
                     <td>					    
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Edit", Item.Id) %>' Text="Edit" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Delete", Item.Id) %>' Text="Delete" /> |
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Default", Item.Id) %>' Text="Memebers" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Insert", Item.Id) %>' Text="Join" /> 
                     </td>

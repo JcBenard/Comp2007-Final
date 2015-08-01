@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="RaidMemeberEdit" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Edit.aspx.cs" Inherits="Comp2007_final.RaidMemebers.Edit" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div>
+    <div class="well bs-component">
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
             ItemType="Comp2007_final.Models.RaidMemeber" DefaultMode="Edit" DataKeyNames="Id"
@@ -11,7 +11,7 @@
             </EmptyDataTemplate>
             <EditItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend>Edit RaidMemeber</legend>
+                    <legend>Edit Memeber</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
 						    <asp:DynamicControl Mode="Edit" DataField="Role" runat="server" />
 							<asp:DynamicControl Mode="Edit" 

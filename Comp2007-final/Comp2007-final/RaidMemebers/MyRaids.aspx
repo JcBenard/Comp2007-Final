@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="well">
     <h2>My Raids</h2>
     <div>
         <asp:ListView ID="ListView1" runat="server"
@@ -65,6 +66,7 @@
                 </tr>
             </ItemTemplate>
         </asp:ListView>
+    </div>
     </div>
     <asp:LoginName ID="LoginName" runat="server" Font-Size="Larger" Visible="False" />
 </asp:Content>

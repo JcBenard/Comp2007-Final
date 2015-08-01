@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="RaidMemeberList" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Default.aspx.cs" Inherits="Comp2007_final.RaidMemebers.Default" %>
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <h2>RaidMemebers List</h2>
+    <div class="well">
+    <h2>Memebers List</h2>
     <p>
         <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Join" />
     </p>
@@ -11,7 +12,7 @@
 			ItemType="Comp2007_final.Models.RaidMemeber"
             SelectMethod="GetData">
             <EmptyDataTemplate>
-                There are no entries found for RaidMemebers
+                Currently no Memebers Signed up.
             </EmptyDataTemplate>
             <LayoutTemplate>
                 <table class="table">
@@ -24,7 +25,7 @@
 								<asp:LinkButton Text="Role" CommandName="Sort" CommandArgument="Role" runat="Server" />
 							</th>
                             <th>
-								<asp:LinkButton Text="RaidId" CommandName="Sort" CommandArgument="RaidId" runat="Server" />
+								<asp:LinkButton Text="Event Name" CommandName="Sort" CommandArgument="RaidId" runat="Server" />
 							</th>
                             <th>&nbsp;</th>
                         </tr>
@@ -60,5 +61,6 @@
             </ItemTemplate>
         </asp:ListView>
     </div>
+        </div>
 </asp:Content>
 

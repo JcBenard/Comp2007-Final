@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="RaidInsert" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Insert.aspx.cs" Inherits="Comp2007_final.Raids.Insert" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div>
+    <div class="well bs-component">
 		<p>&nbsp;</p>
         <asp:FormView runat="server"
             ItemType="Comp2007_final.Models.Raid" DefaultMode="Insert"
