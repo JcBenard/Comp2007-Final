@@ -13,7 +13,6 @@
                 <fieldset class="form-horizontal">
                     <legend>Edit RaidMemeber</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"  />                 
-						    <asp:DynamicControl Mode="Edit" DataField="Name" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Role" runat="server" />
 							<asp:DynamicControl Mode="Edit" 
 								DataField="RaidId" 
@@ -23,7 +22,7 @@
 								UIHint="ForeignKey" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" />
+							<asp:Button runat="server" ID="UpdateButton" CommandName="Update" Text="Update" CssClass="btn btn-primary" /> &nbsp;
 							<asp:Button runat="server" ID="CancelButton" CommandName="Cancel" Text="Cancel" CausesValidation="false" CssClass="btn btn-default" />
 						</div>
 					</div>

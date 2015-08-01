@@ -7,63 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Comp2007_final.RaidMemebers {
+namespace Comp2007_final {
     
     
-    public partial class Insert {
+    public partial class ErrorPage {
         
         /// <summary>
-        /// NameLabel control.
+        /// FriendlyErrorMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameLabel;
+        protected global::System.Web.UI.WebControls.Label FriendlyErrorMsg;
         
         /// <summary>
-        /// LoginName control.
+        /// DetailedErrorPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName;
+        protected global::System.Web.UI.WebControls.Panel DetailedErrorPanel;
         
         /// <summary>
-        /// RoleLabel control.
+        /// ErrorDetailedMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RoleLabel;
+        protected global::System.Web.UI.WebControls.Label ErrorDetailedMsg;
         
         /// <summary>
-        /// RoleDropDownList control.
+        /// ErrorHandler control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RoleDropDownList;
+        protected global::System.Web.UI.WebControls.Label ErrorHandler;
         
         /// <summary>
-        /// RaidLabel control.
+        /// InnerMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RaidLabel;
+        protected global::System.Web.UI.WebControls.Label InnerMessage;
         
         /// <summary>
-        /// Label1 control.
+        /// InnerTrace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label InnerTrace;
     }
 }

@@ -33,7 +33,7 @@ namespace Comp2007_final.Raids
                     _db.SaveChanges();
                 }
             }
-            Response.Redirect("../Default");
+            //Response.Redirect("../Default");
         }
 
         // This is the Select methd to selects a single Raid item with the id
@@ -55,7 +55,7 @@ namespace Comp2007_final.Raids
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
-                Response.Redirect("../Default");
+                //Response.Redirect("../Default");
             }
         }
     }

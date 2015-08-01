@@ -11,6 +11,7 @@ namespace Comp2007_final.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Raid
     {
