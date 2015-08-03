@@ -9,7 +9,7 @@
         <div class="col-lg-4 col-lg-offset-4">
             <div class="well bs-component">
                 <fieldset class="form-horizontal">
-                    <legend class="col-sm-offset-2">Join Raid</legend>
+                    <legend class="col-sm-offset-2">Join Event</legend>
                     <div class="col-lg-offset-1">
                         <div style="margin-bottom: 20px">
                             <div class="form-group">

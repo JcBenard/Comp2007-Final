@@ -2,9 +2,9 @@
 <%@ Register TagPrefix="FriendlyUrls" Namespace="Microsoft.AspNet.FriendlyUrls" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="well">
-    <h2>Raids List</h2>
+    <h2>Event List</h2>
     <p>
-        <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new raid" />
+        <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Create new event" />
     </p>
     <div>
         <asp:ListView id="ListView1" runat="server"
@@ -12,7 +12,7 @@
 			ItemType="Comp2007_final.Models.Raid"
             SelectMethod="GetData">
             <EmptyDataTemplate>
-                There are no entries found for Raids
+                There are no entries found for this Event
             </EmptyDataTemplate>
             <LayoutTemplate>
                 <table class="table table-striped table-hover">

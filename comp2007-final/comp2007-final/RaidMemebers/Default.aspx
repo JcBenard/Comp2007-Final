@@ -3,9 +3,6 @@
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
     <div class="well">
     <h2>Memebers List</h2>
-    <p>
-        <asp:HyperLink runat="server" NavigateUrl="Insert" Text="Join" />
-    </p>
     <div>
         <asp:ListView id="ListView1" runat="server"
             DataKeyNames="Id" 
@@ -55,7 +52,7 @@
 							</td>
                     <td>
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Edit", Item.Id) %>' Text="Edit" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id) %>' Text="Delete" />
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id, Item.Role) %>' Text="Delete" />
                     </td>
                 </tr>
             </ItemTemplate>

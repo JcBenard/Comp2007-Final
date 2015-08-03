@@ -77,8 +77,8 @@
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                                         <ul class="nav navbar-nav">
                                             <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
-                                            <li><a href="/Raids/Default.aspx">Raids</a></li>
-                                            <li><a href="/RaidMemebers/MyRaids.aspx">My Raids</a></li>
+                                            <li><a href="/Raids/Default.aspx">Events</a></li>
+                                            <li><a href="/RaidMemebers/MyRaids.aspx">My Events</a></li>
                                             <li><a href="About.aspx">About Us</a></li>
                                             <li><a href="Contact.aspx">Contact Us</a></li>
                                         </ul>

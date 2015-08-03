@@ -8,10 +8,10 @@
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <InsertItemTemplate>
                 <fieldset class="form-horizontal">
-				<legend>Insert Raid</legend>
+				<legend>Add Event</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
 						    <asp:DynamicControl Mode="Insert" DataField="RaidName" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="Time" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Time" runat="server" DataFormatString="0:dd/MM/yyyy" ApplyFormatInEditMode="True" />
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="TanksNeeded" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="HealersNeeded" runat="server" />

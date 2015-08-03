@@ -7,11 +7,11 @@
             UpdateMethod="UpdateItem" SelectMethod="GetItem"
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <EmptyDataTemplate>
-                Cannot find the Raid with Id <%: Request.QueryString["Id"] %>
+                Cannot find the Event with Id <%: Request.QueryString["Id"] %>
             </EmptyDataTemplate>
             <EditItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend class="col-sm-offset-2">Edit Raid</legend>
+                    <legend class="col-sm-offset-2">Edit Event</legend>
 					<asp:ValidationSummary runat="server" CssClass="alert alert-danger"/>                 
 						    <asp:DynamicControl Mode="Edit" DataField="RaidName" runat="server" />
 						    <asp:DynamicControl Mode="Edit" DataField="Time" runat="server" />

@@ -61,7 +61,7 @@
                     </td>
                     <td>
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Edit", Item.Id) %>' Text="Edit" /> | 
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id) %>' Text="Delete" />
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id, Item.Role) %>' Text="Delete" />
                     </td>
                 </tr>
             </ItemTemplate>
