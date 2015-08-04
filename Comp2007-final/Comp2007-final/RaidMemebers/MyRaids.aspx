@@ -5,21 +5,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="well">
-    <h2>My Raids</h2>
+    <h2>My Events</h2>
     <div>
         <asp:ListView ID="ListView1" runat="server"
             DataKeyNames="Id"
             ItemType="Comp2007_final.Models.RaidMemeber"
             SelectMethod="GetData">
             <EmptyDataTemplate>
-                There are no entries found for My Raids
+                There are no entries found for My Events
             </EmptyDataTemplate>
             <LayoutTemplate>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>
-                                <asp:LinkButton Text="Raid Name" CommandName="Sort" CommandArgument="RaidName" runat="Server" />
+                                <asp:LinkButton Text="Event Name" CommandName="Sort" CommandArgument="RaidName" runat="Server" />
                             </th>
                             <th>
                                 <asp:LinkButton Text="Time" CommandName="Sort" CommandArgument="Time" runat="Server" />
@@ -39,9 +39,9 @@
                 </table>
                 <asp:DataPager PageSize="8" runat="server">
                     <Fields>
-                        <asp:NextPreviousPagerField ShowLastPageButton="False" ShowNextPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
+                        <asp:NextPreviousPagerField ShowLastPageButton="False" ShowNextPageButton="False" ButtonType="Button" ButtonCssClass="btn btn-default" />
                         <asp:NumericPagerField ButtonType="Button" NumericButtonCssClass="btn" CurrentPageLabelCssClass="btn disabled" NextPreviousButtonCssClass="btn" />
-                        <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn" />
+                        <asp:NextPreviousPagerField ShowFirstPageButton="False" ShowPreviousPageButton="False" ButtonType="Button" ButtonCssClass="btn btn-default" />
                     </Fields>
                 </asp:DataPager>
             </LayoutTemplate>

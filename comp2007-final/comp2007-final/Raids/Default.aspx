@@ -91,6 +91,7 @@
 							</td>
                     <td>					    
 					    <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Edit", Item.Id) %>' Text="Edit" /> | 
+                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/Raids/Delete", Item.Id) %>' Text="Delete" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Default", Item.Id) %>' Text="Memebers" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Insert", Item.Id) %>' Text="Join" /> 
                     </td>

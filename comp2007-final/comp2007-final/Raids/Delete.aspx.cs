@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using Microsoft.AspNet.FriendlyUrls.ModelBinding;
 using Comp2007_final.Models;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Comp2007_final.Raids
 {
@@ -29,11 +31,20 @@ namespace Comp2007_final.Raids
 
                 if (item != null)
                 {
+                    SqlConnection cnn = new SqlConnection();
+                    cnn = new SqlConnection("Data source=niaogbu2bc.database.windows.net;initial catalog=finalProjectDB;user id=admins;password=Servers7");
+                    cnn.Open();
+
+                    SqlCommand cmd = new SqlCommand("DELETE FROM RaidMemebers WHERE RaidId = " + Id, cnn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+
                     _db.Raids.Remove(item);
                     _db.SaveChanges();
                 }
             }
-            //Response.Redirect("../Default");
+            Response.Redirect("../Default");
         }
 
         // This is the Select methd to selects a single Raid item with the id
@@ -55,7 +66,7 @@ namespace Comp2007_final.Raids
         {
             if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
             {
-                //Response.Redirect("../Default");
+                Response.Redirect("../Default");
             }
         }
     }

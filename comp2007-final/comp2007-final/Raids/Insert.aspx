@@ -8,14 +8,14 @@
             OnItemCommand="ItemCommand" RenderOuterTable="false">
             <InsertItemTemplate>
                 <fieldset class="form-horizontal">
-				<legend>Add Event</legend>
+				<legend class="col-sm-offset-2">Add Event</legend>
 		        <asp:ValidationSummary runat="server" CssClass="alert alert-danger" />
-						    <asp:DynamicControl Mode="Insert" DataField="RaidName" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Event Name" runat="server" />
 						    <asp:DynamicControl Mode="Insert" DataField="Time" runat="server" DataFormatString="0:dd/MM/yyyy" ApplyFormatInEditMode="True" />
 						    <asp:DynamicControl Mode="Insert" DataField="Description" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="TanksNeeded" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="HealersNeeded" runat="server" />
-						    <asp:DynamicControl Mode="Insert" DataField="DpsNeeded" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Tanks Needed" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Healers Needed" runat="server" />
+						    <asp:DynamicControl Mode="Insert" DataField="Dps Needed" runat="server" />
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" ID="InsertButton" CommandName="Insert" Text="Insert" CssClass="btn btn-primary" />

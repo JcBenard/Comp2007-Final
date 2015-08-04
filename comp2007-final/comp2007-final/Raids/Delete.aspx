@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="RaidDelete" Language="C#" MasterPageFile="~/Default.Master" CodeBehind="Delete.aspx.cs" Inherits="Comp2007_final.Raids.Delete" %>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
-    <div>
+    <div class="well bs-component">
 		<p>&nbsp;</p>
-        <h3>Are you sure want to delete this Raid?</h3>
+        <h3>Are you sure want to delete this Event?</h3>
         <asp:FormView runat="server"
             ItemType="Comp2007_final.Models.Raid" DataKeyNames="Id"
             DeleteMethod="DeleteItem" SelectMethod="GetItem"
@@ -12,18 +12,10 @@
             </EmptyDataTemplate>
             <ItemTemplate>
                 <fieldset class="form-horizontal">
-                    <legend>Delete Raid</legend>
+                    <legend>Delete Event</legend>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>Id</strong>
-								</div>
-								<div class="col-sm-4">
-									<asp:DynamicControl runat="server" DataField="Id" ID="Id" Mode="ReadOnly" />
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-2 text-right">
-									<strong>RaidName</strong>
+									<strong>Event Name</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="RaidName" ID="RaidName" Mode="ReadOnly" />
@@ -47,7 +39,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>TanksNeeded</strong>
+									<strong>Tanks Needed</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="TanksNeeded" ID="TanksNeeded" Mode="ReadOnly" />
@@ -55,7 +47,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>HealersNeeded</strong>
+									<strong>Healers Needed</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="HealersNeeded" ID="HealersNeeded" Mode="ReadOnly" />
@@ -63,7 +55,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>DpsNeeded</strong>
+									<strong>Dps Needed</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="DpsNeeded" ID="DpsNeeded" Mode="ReadOnly" />
@@ -71,7 +63,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>TanksHave</strong>
+									<strong>Tanks Have</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="TanksHave" ID="TanksHave" Mode="ReadOnly" />
@@ -79,7 +71,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>HealersHave</strong>
+									<strong>Healers Have</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="HealersHave" ID="HealersHave" Mode="ReadOnly" />
@@ -87,7 +79,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-2 text-right">
-									<strong>DpsHave</strong>
+									<strong>Dps Have</strong>
 								</div>
 								<div class="col-sm-4">
 									<asp:DynamicControl runat="server" DataField="DpsHave" ID="DpsHave" Mode="ReadOnly" />

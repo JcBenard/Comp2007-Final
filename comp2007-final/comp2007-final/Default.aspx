@@ -6,8 +6,8 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Welcome</h1>
-        <p>This application will allow groups to set up events and raids in any mmo</p>
-        <p><a class="btn btn-default btn-lg" href="/Register" role="button">Click to Register &raquo;</a></p>
+        <p>This site was made to help groups for MMO's set up events, don't hesitate to try it out. Click the button below to register and give it a shot.</p>
+        <p><a class="btn btn-default btn-lg" href="/Register" role="button">Register &raquo;</a></p>
       </div>
     </div>
 
@@ -15,18 +15,18 @@
         <div class="col-md-6">
             <div class="panel panel-default">
   <div class="panel-body">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>Login In</h2>
+          <p>If you're returning welcome back the button below will direct you to the login page. </p>
+          <p><a class="btn btn-default" href="/Login.aspx" role="button">Login &raquo;</a></p>
                 </div>
                 </div>
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
   <div class="panel-body">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <h2>About</h2>
+          <p>Hello this application is a school project created by Jean-Claude Benard. If you wish to learn more click below</p>
+          <p><a class="btn btn-default" href="/About.aspx" role="button">About  &raquo;</a></p>
       </div>
                 </div>
        </div>
