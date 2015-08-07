@@ -9,6 +9,11 @@
             College. This application was made in ASP using bootstrap for styling with azure as the hosting platform.
         </p>
         <p>
+            The primary point of this application is to let people make events for an mmo and join them taking into acount the things surrounding that.
+            The biggest feature for this is the number of memebers needed for each role and the number currently signed up for them. This feature 
+            can help groups organize more effectivly then just a regular planner.
+        </p>
+        <p>
             If you would like to see more of my work you can check out my <a href="https://github.com/JcBenard">GitHub page</a>. I can also be contacted at 
             jeanclaudebenard91@gmail.com if you would like more code or have any questions. Thank you for you time Jean-Claude.
         </p>

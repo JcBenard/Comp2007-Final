@@ -3,21 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<%@ Import Namespace="Microsoft.AspNet.FriendlyUrls" %>
 
-    <%@ Import Namespace="Microsoft.AspNet.FriendlyUrls" %>
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4">
             <div class="well bs-component">
                 <fieldset class="form-horizontal">
                     <legend class="col-sm-offset-2">Join Event</legend>
-                    <div class="col-lg-offset-1">
-                        <div style="margin-bottom: 20px">
+                    <div class="col-sm-offset-2">
                             <div class="form-group">
                                 <asp:Label ID="NameLabel" runat="server" Text="Name: " Font-Size="Larger"></asp:Label>
                                 <asp:LoginName ID="LoginName" runat="server" Font-Size="Larger" />
                             </div>
-                        </div>
-                        <div style="margin-bottom: 20px">
                             <div class="form-group">
                                 <asp:Label ID="RoleLabel" runat="server" Text="Role: " Font-Size="Larger"></asp:Label>
                                 <asp:DropDownList ID="RoleDropDownList" runat="server" Font-Size="Larger">
@@ -26,15 +21,11 @@
                                     <asp:ListItem Value="Tank" Text="Tank"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                        </div>
-                        <div style="margin-bottom: 20px">
                             <div class="form-group">
                                 <asp:Label ID="RaidLabel" runat="server" Text="Raid: " Font-Size="Larger"></asp:Label>
                                 <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="Larger"><%: Id %></asp:Label>
-                                <%--<asp:DynamicControl runat="server" DataField="RaidName" ID="RaidName" Mode="ReadOnly" />--%>
                             </div>
                         </div>
-                    </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <asp:Button runat="server" OnClick="Join" Text="Join" class="btn btn-default" />
@@ -43,6 +34,4 @@
                     </div>
                 </fieldset>
             </div>
-        </div>
-    </div>
 </asp:Content>

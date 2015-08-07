@@ -40,6 +40,7 @@ namespace Comp2007_final.RaidMemebers
                 if (item != null)
                 {
 
+                    //decrements the amount for the users role in the currnet event
                     SqlConnection cnn = new SqlConnection();
                     cnn = new SqlConnection("Data source=niaogbu2bc.database.windows.net;initial catalog=finalProjectDB;user id=admins;password=Servers7");
                     cnn.Open();

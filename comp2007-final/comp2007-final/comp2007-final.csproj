@@ -106,6 +106,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\images\ffxiv_07272015_224438.png" />
+    <Content Include="Content\images\ffxiv_08032015_220420.png" />
     <Content Include="Default.Master" />
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
@@ -193,7 +194,9 @@
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>

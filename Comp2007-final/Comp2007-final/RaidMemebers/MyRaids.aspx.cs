@@ -24,11 +24,14 @@ namespace Comp2007_final.RaidMemebers
         // USAGE: <asp:ListView SelectMethod="GetData">
         public IQueryable<Comp2007_final.Models.RaidMemeber> GetData()
         {
+            //get the current users name
             String name = null;
             if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 name = System.Web.HttpContext.Current.User.Identity.Name;
             }
+
+            //run a qurey getting all data that has the current users name
             var query = _db.RaidMemebers.Include(m => m.Raid)
                 .Where(m => m.Name == name);
             return query;

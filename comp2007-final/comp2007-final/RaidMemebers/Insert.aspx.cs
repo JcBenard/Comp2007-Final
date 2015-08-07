@@ -20,10 +20,12 @@ namespace Comp2007_final.RaidMemebers
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //grabs the friendlyurlsegments
             foreach (var segment in Request.GetFriendlyUrlSegments()) { Id = segment; };
 
         }
 
+        //adds the user to the selected event
         protected void Join(object sender, EventArgs e)
         {
             String name = null;
@@ -42,7 +44,7 @@ namespace Comp2007_final.RaidMemebers
             cmd.ExecuteNonQuery();
 
             
-
+            //increments field for the event in the role they chose
             switch (RoleDropDownList.SelectedItem.Text)
             {
                 case "Dps":

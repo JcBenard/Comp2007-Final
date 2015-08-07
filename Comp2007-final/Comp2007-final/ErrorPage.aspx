@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="well">
     <h2>Error:</h2>
     <p></p>
     <asp:Label ID="FriendlyErrorMsg" runat="server" Text="Label" Font-Size="Large" style="color: red"></asp:Label>
@@ -26,4 +27,5 @@
             <asp:Label ID="InnerTrace" runat="server"  />
         </p>
     </asp:Panel>
+        </div>
 </asp:Content>

@@ -60,7 +60,6 @@
                         <asp:DynamicControl runat="server" DataField="Role" ID="Role" Mode="ReadOnly" />
                     </td>
                     <td>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Edit", Item.Id) %>' Text="Edit" /> | 
                         <asp:HyperLink runat="server" NavigateUrl='<%# FriendlyUrl.Href("~/RaidMemebers/Delete", Item.Id, Item.Role) %>' Text="Delete" />
                     </td>
                 </tr>
